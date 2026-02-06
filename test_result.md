@@ -254,6 +254,9 @@ frontend:
       - working: false
         agent: "testing"
         comment: "❌ CRITICAL ISSUE: Password matching validation not working properly. Terms checkbox validation working but password mismatch errors not showing. Success toast not appearing after form submission. All form fields present and 'Back to Home' button works."
+      - working: false
+        agent: "testing"
+        comment: "🔍 FOCUSED VALIDATION TEST RESULTS: ✅ Password mismatch validation WORKS correctly - shows 'Passwords do not match' error. ✅ Success toast WORKS correctly for valid submissions. ❌ CRITICAL: Empty form validation NOT working - no error messages show for required fields. ❌ CRITICAL: Email format validation NOT working - invalid emails don't trigger 'Email is invalid' error. The validateForm() function exists in code but validation errors are not displaying in UI. HTML5 validation is being bypassed. Form submission logic needs investigation."
 
   - task: "Course Page"
     implemented: true
