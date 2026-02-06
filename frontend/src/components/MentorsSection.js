@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from './ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
@@ -71,16 +72,16 @@ export default function MentorsSection() {
   const maxIndex = mentors.length - slidesPerView;
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  const interval = setInterval(() => {
+    handleNext();
+  }, 5000);
+  return () => clearInterval(interval);
+}, [handleNext]);
 
-  const handleNext = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
+ const handleNext = useCallback(() => {
+  setDirection(1);
+  setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+}, [maxIndex]);
 
   const handlePrev = () => {
     setDirection(-1);
