@@ -51,7 +51,12 @@ export default function SignupPage() {
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+    // Clear error for this field when user starts typing
+    if (errors[id]) {
+      setErrors({ ...errors, [id]: '' });
+    }
   };
 
   return (
