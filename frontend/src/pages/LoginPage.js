@@ -94,7 +94,7 @@ export default function LoginPage() {
                   type="email"
                   placeholder="you@example.com"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmailChange}
                   className={errors.email ? 'border-destructive' : ''}
                 />
                 {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
@@ -107,7 +107,7 @@ export default function LoginPage() {
                   type="password"
                   placeholder="••••••••"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handlePasswordChange}
                   className={errors.password ? 'border-destructive' : ''}
                 />
                 {errors.password && <p className="text-xs text-destructive">{errors.password}</p>}
