@@ -306,16 +306,9 @@ metadata:
   test_sequence: 1
 
 test_plan:
-  current_focus:
-    - "Navigation & Routing"
-    - "Hero Section"
-    - "Skills Section"
-    - "Login Page"
+  current_focus: []
+  stuck_tasks:
     - "Signup Page"
-    - "Course Page"
-    - "Pricing Section"
-    - "Responsive Design"
-  stuck_tasks: []
   test_all: true
   test_priority: "high_first"
 
